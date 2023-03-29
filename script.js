@@ -1,10 +1,13 @@
 // complete the given function
 
 function palindrome(str){
-	const palindrome = (str) => {
-  const check = str.split('').reverse().join('')
-
-  return str === check;
+	var l = str.length;
+    for (var i = 0; i < l / 2; i++) {
+        if (str.charAt(i) !== str.charAt(l - 1 - i)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 

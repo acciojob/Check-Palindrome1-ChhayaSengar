@@ -11,17 +11,14 @@ function palindrome(str){
 
 
 	/* remove special characters, spaces and make lowercase*/
-  var removeChar = str.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+  var newStr= str.replace(/[^0-9a-z]/gi, '').toLowerCase().split("");
 
-  /* reverse removeChar for comparison*/
-  var checkPalindrome = removeChar.split('').reverse().join('');
-
-  /* Check to see if str is a Palindrome*/
-   if(removeChar === checkPalindrome){
-     return true;
-   }else{
-     return false;
-   }
+  for(var i=0; i < (newStr.length)/2; i++){ 
+    if(newStr[i] !== newStr[newStr.length-i-1]){ 
+      return false; 
+    }  
+  }
+ return true;
 }
 
 
